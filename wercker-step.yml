@@ -1,0 +1,30 @@
+name: mfs-upload
+version: 0.1.0
+description: Uploads a file to fs-php.
+keywords:
+  - http
+  - upload
+properties:
+  url:
+    type: string
+    required: true
+  file:
+    type: string
+    required: true
+  path:
+    type: string
+    required: true
+  username:
+    type: string
+    required: false
+  password:
+    type: string
+    required: false
+  acl:
+    type: string
+    default: private
+    required: false
+  expected_response:
+    type: int
+    default: 201
+    required: false
