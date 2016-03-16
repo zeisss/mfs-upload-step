@@ -25,6 +25,14 @@ if [ ! -f "$WERCKER_MFS_UPLOAD_FILE" ]; then
   fail "Attribute 'file' must point to an existing file, got: ${WERCKER_MFS_UPLOAD_FILE}"
 fi
 
+## Show some user infos about the file to be uploaded
+info "Local file: $(ls -lah $file)"
+info "ACL: ${acl}"
+info "Remote path: ${path}"
+# setMessage is shown below the console output in the webui as oneline
+setMessage "Artifact: $(ls -lah $file)"
+
+
 # do the upload
 command="curl -sS -XPUT"
 if [ ! -z "$WERCKER_MFS_UPLOAD_USERNAME" ]; then
