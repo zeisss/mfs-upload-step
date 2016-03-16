@@ -21,6 +21,10 @@ test ! -z "$WERCKER_MFS_UPLOAD_FILE"
 test ! -z "$WERCKER_MFS_UPLOAD_ACL"
 test ! -z "$WERCKER_MFS_UPLOAD_EXPECTED_RESPONSE"
 
+if [ ! -f "$WERCKER_MFS_UPLOAD_FILE" ]; then
+  fail "Attribute 'file' must point to an existing file, got: ${WERCKER_MFS_UPLOAD_FILE}"
+fi
+
 # do the upload
 command="curl -sS -XPUT"
 if [ ! -z "$WERCKER_MFS_UPLOAD_USERNAME" ]; then
