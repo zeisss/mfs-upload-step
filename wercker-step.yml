@@ -1,5 +1,5 @@
 name: mfs-upload
-version: 0.1.0
+version: 0.1.1
 description: Uploads a file to fs-php.
 keywords:
   - http
