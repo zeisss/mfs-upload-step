@@ -23,7 +23,7 @@ test ! -z "$WERCKER_MFS_UPLOAD_EXPECTED_RESPONSE"
 
 # do the upload
 command="curl -sS -XPUT"
-if [ ! -z "$WERCKER_MFS_UPLOAD_USERNAME"]; then
+if [ ! -z "$WERCKER_MFS_UPLOAD_USERNAME" ]; then
   command="$command -u${WERCKER_MFS_UPLOAD_USERNAME}:${WERCKER_MFS_UPLOAD_PASSWORD}"
 fi
 command="$command ${WERCKER_MFS_UPLOAD_URL}/${WERCKER_MFS_UPLOAD_PATH}"
