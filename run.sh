@@ -26,11 +26,11 @@ if [ ! -f "$WERCKER_MFS_UPLOAD_FILE" ]; then
 fi
 
 ## Show some user infos about the file to be uploaded
-info "Local file: $(ls -lah "$file")"
-info "ACL: ${acl}"
-info "Remote path: ${path}"
+info "Local file: $(ls -lah "${WERCKER_MFS_UPLOAD_FILE}")"
+info "ACL: ${WERCKER_MFS_UPLOAD_ACL}"
+info "Remote path: ${WERCKER_MFS_UPLOAD_PATH}"
 # setMessage is shown below the console output in the webui as oneline
-setMessage "Artifact: $(ls -lah "$file")"
+setMessage "Artifact: $(ls -lah "${WERCKER_MFS_UPLOAD_FILE}")"
 
 
 # do the upload
